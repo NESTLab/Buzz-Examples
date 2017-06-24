@@ -1,0 +1,66 @@
+# AUTHOR: Carlo Pinciroli <carlo@pinciroli.net>
+#
+# This script shows a simple example of how to create a tree of robots in Buzz.
+
+include "include/string.bzz"
+
+#
+# A tree is class-like object.
+#
+tree = {}
+
+#
+# Creates a tree with the given id.
+#
+tree.create = function(tid) {
+  return {
+    .tid = tid,            # The tree id
+    .parent = -1,      # Initially no parent
+    .distance = -1.0 # Initially no distance to root
+  }
+}
+
+#
+# Starts a new tree.
+#
+tree.start = function(tr) {
+  # Set this robot as root
+  tr.distance = 0
+  # Advertise the creation of a new tree
+  neighbors.broadcast(string.concat("tree", string.tostring(tr.tid)), tr.distance)
+}
+
+#
+# Let's a robot join a tree
+#
+tree.join = function(tr) {
+  # Listen to messages regarding the tree
+  neighbors.listen(string.concat("tree", string.tostring(tr.tid)),
+    function(topic, dist, rid) {
+      log("ME:", id, ", MSG:", rid)
+      # Estimate my distance to the root
+      neighbors.foreach(function(rrid,data) { log("ME:", id,", NB:", rrid) })
+      var dtoroot = dist + neighbors.get(rid).distance
+      # No parent, add message sender as parent
+      if(tr.parent == -1) {
+        tr.parent = rid
+        tr.distance = dtoroot
+      }
+      # I have a parent, but I prefer a closer one to the root
+      else if(tr.distance > dtoroot) {
+        tr.parent = rid
+        tr.distance = dtoroot
+      }
+      # Stop listening to messages
+      neighbors.ignore(topic)	
+      # Inform the others that I'm part of the tree
+      neighbors.broadcast(topic, tr.distance)
+    })
+}
+
+#
+# Returns true if a robot has joined the given tree
+#
+tree.joined = function(tr) {
+  return tr.parent > -1
+}
