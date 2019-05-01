@@ -1,0 +1,4 @@
+target create /usr/local/libexec/argos3
+settings set -- target.run-args -c tree.argos
+settings set -- target.env-vars DYLD_LIBRARY_PATH=/usr/local/lib/argos3
+process launch

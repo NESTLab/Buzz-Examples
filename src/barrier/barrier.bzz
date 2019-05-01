@@ -1,0 +1,57 @@
+# Barrier functions
+
+# Creates a new barrier
+#
+# bid [int]:         the barrier id, internally used for stigmergy
+# threshold [int]:   minimum number of ready robots to move on
+# curswarm [swarm]:  current swarm
+# nextswarm [swarm]: next swarm after threshold is reached
+# transf [closure]:  function called upon reaching the threshold
+function barrier_new(bid, threshold, curswarm, nextswarm, transf) {
+  return { .bid=bid, .vs=stigmergy.create(bid), .th=threshold, .cs=curswarm, .ns=nextswarm, .tf=transf }
+}
+
+# Resets an existing barrier
+#
+# b [barrier]:       the barrier
+# threshold [int]:   minimum number of ready robots to move on
+# curswarm [swarm]:  current swarm
+# nextswarm [swarm]: next swarm after threshold is reached
+# transf [closure]:  function called upon reaching the threshold
+function barrier_reset(b, threshold, curswarm, nextswarm, transf) {
+  b.vs = stigmergy.create(b.bid)
+  b.th=threshold
+  b.cs=curswarm
+  b.ns=nextswarm
+  b.tf=transf
+}
+
+# Called when a robot is ready to move on
+#
+# b [barrier]: the barrier
+function barrier_ready(b) {
+  # Add myself to the barrier
+  b.vs.put(id, 1)
+}
+
+# Called to know whether the barrier threshold was reached
+#
+# b [barrier]: the barrier
+function barrier_wait(b) {
+  # If size of the vstig is greater than threshold, switch
+  if(b.vs.size() >= b.th) {
+    # Leave current swarm
+    b.cs.leave()
+    # Join new swarm
+    b.ns.join()
+    # Call transfer function
+    if(b.tf) b.tf(b)
+    # Done
+    return 1
+  }
+  else {
+    # Not done yet
+    return 0
+  }
+}
+

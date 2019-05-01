@@ -1,0 +1,337 @@
+!26
+'math
+'vec2
+'new
+'x
+'y
+'newp
+'cos
+'sin
+'length
+'sqrt
+'angle
+'atan
+'norm
+'add
+'sub
+'scale
+'dot
+'init
+'orientToGlobal2DPoint
+'angleToGlobal2D
+'pose
+'position
+'log
+'step
+'reset
+'destroy
+159:	pushs 17
+164:	pushcn 952
+169:	gstore
+170:	pushs 18
+175:	pushcn 953
+180:	gstore
+181:	pushs 23
+186:	pushcn 1050
+191:	gstore
+192:	pushs 24
+197:	pushcn 1063
+202:	gstore
+203:	pushs 25
+208:	pushcn 1064
+213:	gstore
+214:	nop
+215:	pushs 0	|4,4,/usr/local/share/buzz/include/vec2.bzz
+220:	gload	|4,4,/usr/local/share/buzz/include/vec2.bzz
+221:	pushs 1	|4,5,/usr/local/share/buzz/include/vec2.bzz
+226:	pusht	|4,13,/usr/local/share/buzz/include/vec2.bzz
+227:	tput	|4,14,/usr/local/share/buzz/include/vec2.bzz
+228:	pushs 0	|12,4,/usr/local/share/buzz/include/vec2.bzz
+233:	gload	|12,4,/usr/local/share/buzz/include/vec2.bzz
+234:	pushs 1	|12,5,/usr/local/share/buzz/include/vec2.bzz
+239:	tget	|12,9,/usr/local/share/buzz/include/vec2.bzz
+240:	pushs 2	|12,10,/usr/local/share/buzz/include/vec2.bzz
+245:	pushl 436	|12,16,/usr/local/share/buzz/include/vec2.bzz
+250:	tput	|14,1,/usr/local/share/buzz/include/vec2.bzz
+251:	pushs 0	|22,4,/usr/local/share/buzz/include/vec2.bzz
+256:	gload	|22,4,/usr/local/share/buzz/include/vec2.bzz
+257:	pushs 1	|22,5,/usr/local/share/buzz/include/vec2.bzz
+262:	tget	|22,9,/usr/local/share/buzz/include/vec2.bzz
+263:	pushs 5	|22,10,/usr/local/share/buzz/include/vec2.bzz
+268:	pushl 463	|22,17,/usr/local/share/buzz/include/vec2.bzz
+273:	tput	|27,1,/usr/local/share/buzz/include/vec2.bzz
+274:	pushs 0	|34,4,/usr/local/share/buzz/include/vec2.bzz
+279:	gload	|34,4,/usr/local/share/buzz/include/vec2.bzz
+280:	pushs 1	|34,5,/usr/local/share/buzz/include/vec2.bzz
+285:	tget	|34,9,/usr/local/share/buzz/include/vec2.bzz
+286:	pushs 8	|34,10,/usr/local/share/buzz/include/vec2.bzz
+291:	pushl 538	|34,19,/usr/local/share/buzz/include/vec2.bzz
+296:	tput	|36,1,/usr/local/share/buzz/include/vec2.bzz
+297:	pushs 0	|43,4,/usr/local/share/buzz/include/vec2.bzz
+302:	gload	|43,4,/usr/local/share/buzz/include/vec2.bzz
+303:	pushs 1	|43,5,/usr/local/share/buzz/include/vec2.bzz
+308:	tget	|43,9,/usr/local/share/buzz/include/vec2.bzz
+309:	pushs 10	|43,10,/usr/local/share/buzz/include/vec2.bzz
+314:	pushl 605	|43,18,/usr/local/share/buzz/include/vec2.bzz
+319:	tput	|45,1,/usr/local/share/buzz/include/vec2.bzz
+320:	pushs 0	|52,4,/usr/local/share/buzz/include/vec2.bzz
+325:	gload	|52,4,/usr/local/share/buzz/include/vec2.bzz
+326:	pushs 1	|52,5,/usr/local/share/buzz/include/vec2.bzz
+331:	tget	|52,9,/usr/local/share/buzz/include/vec2.bzz
+332:	pushs 12	|52,10,/usr/local/share/buzz/include/vec2.bzz
+337:	pushl 647	|52,17,/usr/local/share/buzz/include/vec2.bzz
+342:	tput	|58,1,/usr/local/share/buzz/include/vec2.bzz
+343:	pushs 0	|66,4,/usr/local/share/buzz/include/vec2.bzz
+348:	gload	|66,4,/usr/local/share/buzz/include/vec2.bzz
+349:	pushs 1	|66,5,/usr/local/share/buzz/include/vec2.bzz
+354:	tget	|66,9,/usr/local/share/buzz/include/vec2.bzz
+355:	pushs 13	|66,10,/usr/local/share/buzz/include/vec2.bzz
+360:	pushl 726	|66,16,/usr/local/share/buzz/include/vec2.bzz
+365:	tput	|71,1,/usr/local/share/buzz/include/vec2.bzz
+366:	pushs 0	|79,4,/usr/local/share/buzz/include/vec2.bzz
+371:	gload	|79,4,/usr/local/share/buzz/include/vec2.bzz
+372:	pushs 1	|79,5,/usr/local/share/buzz/include/vec2.bzz
+377:	tget	|79,9,/usr/local/share/buzz/include/vec2.bzz
+378:	pushs 14	|79,10,/usr/local/share/buzz/include/vec2.bzz
+383:	pushl 789	|79,16,/usr/local/share/buzz/include/vec2.bzz
+388:	tput	|84,1,/usr/local/share/buzz/include/vec2.bzz
+389:	pushs 0	|92,4,/usr/local/share/buzz/include/vec2.bzz
+394:	gload	|92,4,/usr/local/share/buzz/include/vec2.bzz
+395:	pushs 1	|92,5,/usr/local/share/buzz/include/vec2.bzz
+400:	tget	|92,9,/usr/local/share/buzz/include/vec2.bzz
+401:	pushs 15	|92,10,/usr/local/share/buzz/include/vec2.bzz
+406:	pushl 852	|92,18,/usr/local/share/buzz/include/vec2.bzz
+411:	tput	|97,1,/usr/local/share/buzz/include/vec2.bzz
+412:	pushs 0	|105,4,/usr/local/share/buzz/include/vec2.bzz
+417:	gload	|105,4,/usr/local/share/buzz/include/vec2.bzz
+418:	pushs 1	|105,5,/usr/local/share/buzz/include/vec2.bzz
+423:	tget	|105,9,/usr/local/share/buzz/include/vec2.bzz
+424:	pushs 16	|105,10,/usr/local/share/buzz/include/vec2.bzz
+429:	pushl 903	|105,16,/usr/local/share/buzz/include/vec2.bzz
+434:	tput	|107,1,/usr/local/share/buzz/include/vec2.bzz
+435:	done
+436:	pusht	|13,11,/usr/local/share/buzz/include/vec2.bzz
+437:	dup	|13,11,/usr/local/share/buzz/include/vec2.bzz
+438:	pushs 3	|13,12,/usr/local/share/buzz/include/vec2.bzz
+443:	lload 1	|13,17,/usr/local/share/buzz/include/vec2.bzz
+448:	tput	|13,17,/usr/local/share/buzz/include/vec2.bzz
+449:	dup	|13,17,/usr/local/share/buzz/include/vec2.bzz
+450:	pushs 4	|13,20,/usr/local/share/buzz/include/vec2.bzz
+455:	lload 2	|13,26,/usr/local/share/buzz/include/vec2.bzz
+460:	tput	|13,26,/usr/local/share/buzz/include/vec2.bzz
+461:	ret1	|13,27,/usr/local/share/buzz/include/vec2.bzz
+462:	ret0	|14,1,/usr/local/share/buzz/include/vec2.bzz
+463:	pusht	|24,4,/usr/local/share/buzz/include/vec2.bzz
+464:	dup	|24,4,/usr/local/share/buzz/include/vec2.bzz
+465:	pushs 3	|24,5,/usr/local/share/buzz/include/vec2.bzz
+470:	lload 1	|24,11,/usr/local/share/buzz/include/vec2.bzz
+475:	pushs 0	|24,17,/usr/local/share/buzz/include/vec2.bzz
+480:	gload	|24,17,/usr/local/share/buzz/include/vec2.bzz
+481:	pushs 6	|24,18,/usr/local/share/buzz/include/vec2.bzz
+486:	tget	|24,21,/usr/local/share/buzz/include/vec2.bzz
+487:	lload 2	|24,23,/usr/local/share/buzz/include/vec2.bzz
+492:	pushi 1	|24,24,/usr/local/share/buzz/include/vec2.bzz
+497:	callc	|24,24,/usr/local/share/buzz/include/vec2.bzz
+498:	mul	|24,24,/usr/local/share/buzz/include/vec2.bzz
+499:	tput	|24,24,/usr/local/share/buzz/include/vec2.bzz
+500:	dup	|24,24,/usr/local/share/buzz/include/vec2.bzz
+501:	pushs 4	|25,5,/usr/local/share/buzz/include/vec2.bzz
+506:	lload 1	|25,11,/usr/local/share/buzz/include/vec2.bzz
+511:	pushs 0	|25,17,/usr/local/share/buzz/include/vec2.bzz
+516:	gload	|25,17,/usr/local/share/buzz/include/vec2.bzz
+517:	pushs 7	|25,18,/usr/local/share/buzz/include/vec2.bzz
+522:	tget	|25,21,/usr/local/share/buzz/include/vec2.bzz
+523:	lload 2	|25,23,/usr/local/share/buzz/include/vec2.bzz
+528:	pushi 1	|25,24,/usr/local/share/buzz/include/vec2.bzz
+533:	callc	|25,24,/usr/local/share/buzz/include/vec2.bzz
+534:	mul	|25,24,/usr/local/share/buzz/include/vec2.bzz
+535:	tput	|25,24,/usr/local/share/buzz/include/vec2.bzz
+536:	ret1	|26,3,/usr/local/share/buzz/include/vec2.bzz
+537:	ret0	|27,1,/usr/local/share/buzz/include/vec2.bzz
+538:	pushs 0	|35,13,/usr/local/share/buzz/include/vec2.bzz
+543:	gload	|35,13,/usr/local/share/buzz/include/vec2.bzz
+544:	pushs 9	|35,14,/usr/local/share/buzz/include/vec2.bzz
+549:	tget	|35,18,/usr/local/share/buzz/include/vec2.bzz
+550:	lload 1	|35,20,/usr/local/share/buzz/include/vec2.bzz
+555:	pushs 3	|35,21,/usr/local/share/buzz/include/vec2.bzz
+560:	tget	|35,23,/usr/local/share/buzz/include/vec2.bzz
+561:	lload 1	|35,26,/usr/local/share/buzz/include/vec2.bzz
+566:	pushs 3	|35,27,/usr/local/share/buzz/include/vec2.bzz
+571:	tget	|35,29,/usr/local/share/buzz/include/vec2.bzz
+572:	mul	|35,29,/usr/local/share/buzz/include/vec2.bzz
+573:	lload 1	|35,32,/usr/local/share/buzz/include/vec2.bzz
+578:	pushs 4	|35,33,/usr/local/share/buzz/include/vec2.bzz
+583:	tget	|35,35,/usr/local/share/buzz/include/vec2.bzz
+584:	lload 1	|35,38,/usr/local/share/buzz/include/vec2.bzz
+589:	pushs 4	|35,39,/usr/local/share/buzz/include/vec2.bzz
+594:	tget	|35,40,/usr/local/share/buzz/include/vec2.bzz
+595:	mul	|35,40,/usr/local/share/buzz/include/vec2.bzz
+596:	add	|35,40,/usr/local/share/buzz/include/vec2.bzz
+597:	pushi 1	|35,41,/usr/local/share/buzz/include/vec2.bzz
+602:	callc	|35,41,/usr/local/share/buzz/include/vec2.bzz
+603:	ret1	|35,41,/usr/local/share/buzz/include/vec2.bzz
+604:	ret0	|36,1,/usr/local/share/buzz/include/vec2.bzz
+605:	pushs 0	|44,13,/usr/local/share/buzz/include/vec2.bzz
+610:	gload	|44,13,/usr/local/share/buzz/include/vec2.bzz
+611:	pushs 11	|44,14,/usr/local/share/buzz/include/vec2.bzz
+616:	tget	|44,18,/usr/local/share/buzz/include/vec2.bzz
+617:	lload 1	|44,20,/usr/local/share/buzz/include/vec2.bzz
+622:	pushs 4	|44,21,/usr/local/share/buzz/include/vec2.bzz
+627:	tget	|44,22,/usr/local/share/buzz/include/vec2.bzz
+628:	lload 1	|44,25,/usr/local/share/buzz/include/vec2.bzz
+633:	pushs 3	|44,26,/usr/local/share/buzz/include/vec2.bzz
+638:	tget	|44,27,/usr/local/share/buzz/include/vec2.bzz
+639:	pushi 2	|44,28,/usr/local/share/buzz/include/vec2.bzz
+644:	callc	|44,28,/usr/local/share/buzz/include/vec2.bzz
+645:	ret1	|44,28,/usr/local/share/buzz/include/vec2.bzz
+646:	ret0	|45,1,/usr/local/share/buzz/include/vec2.bzz
+647:	pushs 0	|53,14,/usr/local/share/buzz/include/vec2.bzz
+652:	gload	|53,14,/usr/local/share/buzz/include/vec2.bzz
+653:	pushs 8	|53,15,/usr/local/share/buzz/include/vec2.bzz
+658:	tget	|53,21,/usr/local/share/buzz/include/vec2.bzz
+659:	lload 1	|53,23,/usr/local/share/buzz/include/vec2.bzz
+664:	pushi 1	|53,24,/usr/local/share/buzz/include/vec2.bzz
+669:	callc	|53,24,/usr/local/share/buzz/include/vec2.bzz
+670:	lstore 2	|53,24,/usr/local/share/buzz/include/vec2.bzz
+675:	pusht	|55,4,/usr/local/share/buzz/include/vec2.bzz
+676:	dup	|55,4,/usr/local/share/buzz/include/vec2.bzz
+677:	pushs 3	|55,5,/usr/local/share/buzz/include/vec2.bzz
+682:	lload 1	|55,10,/usr/local/share/buzz/include/vec2.bzz
+687:	pushs 3	|55,11,/usr/local/share/buzz/include/vec2.bzz
+692:	tget	|55,13,/usr/local/share/buzz/include/vec2.bzz
+693:	lload 2	|55,16,/usr/local/share/buzz/include/vec2.bzz
+698:	div	|55,16,/usr/local/share/buzz/include/vec2.bzz
+699:	tput	|55,16,/usr/local/share/buzz/include/vec2.bzz
+700:	dup	|55,16,/usr/local/share/buzz/include/vec2.bzz
+701:	pushs 4	|56,5,/usr/local/share/buzz/include/vec2.bzz
+706:	lload 1	|56,10,/usr/local/share/buzz/include/vec2.bzz
+711:	pushs 4	|56,11,/usr/local/share/buzz/include/vec2.bzz
+716:	tget	|56,13,/usr/local/share/buzz/include/vec2.bzz
+717:	lload 2	|56,16,/usr/local/share/buzz/include/vec2.bzz
+722:	div	|56,16,/usr/local/share/buzz/include/vec2.bzz
+723:	tput	|56,16,/usr/local/share/buzz/include/vec2.bzz
+724:	ret1	|57,3,/usr/local/share/buzz/include/vec2.bzz
+725:	ret0	|58,1,/usr/local/share/buzz/include/vec2.bzz
+726:	pusht	|68,4,/usr/local/share/buzz/include/vec2.bzz
+727:	dup	|68,4,/usr/local/share/buzz/include/vec2.bzz
+728:	pushs 3	|68,5,/usr/local/share/buzz/include/vec2.bzz
+733:	lload 1	|68,11,/usr/local/share/buzz/include/vec2.bzz
+738:	pushs 3	|68,12,/usr/local/share/buzz/include/vec2.bzz
+743:	tget	|68,14,/usr/local/share/buzz/include/vec2.bzz
+744:	lload 2	|68,18,/usr/local/share/buzz/include/vec2.bzz
+749:	pushs 3	|68,19,/usr/local/share/buzz/include/vec2.bzz
+754:	tget	|68,20,/usr/local/share/buzz/include/vec2.bzz
+755:	add	|68,20,/usr/local/share/buzz/include/vec2.bzz
+756:	tput	|68,20,/usr/local/share/buzz/include/vec2.bzz
+757:	dup	|68,20,/usr/local/share/buzz/include/vec2.bzz
+758:	pushs 4	|69,5,/usr/local/share/buzz/include/vec2.bzz
+763:	lload 1	|69,11,/usr/local/share/buzz/include/vec2.bzz
+768:	pushs 4	|69,12,/usr/local/share/buzz/include/vec2.bzz
+773:	tget	|69,14,/usr/local/share/buzz/include/vec2.bzz
+774:	lload 2	|69,18,/usr/local/share/buzz/include/vec2.bzz
+779:	pushs 4	|69,19,/usr/local/share/buzz/include/vec2.bzz
+784:	tget	|69,20,/usr/local/share/buzz/include/vec2.bzz
+785:	add	|69,20,/usr/local/share/buzz/include/vec2.bzz
+786:	tput	|69,20,/usr/local/share/buzz/include/vec2.bzz
+787:	ret1	|70,3,/usr/local/share/buzz/include/vec2.bzz
+788:	ret0	|71,1,/usr/local/share/buzz/include/vec2.bzz
+789:	pusht	|81,4,/usr/local/share/buzz/include/vec2.bzz
+790:	dup	|81,4,/usr/local/share/buzz/include/vec2.bzz
+791:	pushs 3	|81,5,/usr/local/share/buzz/include/vec2.bzz
+796:	lload 1	|81,11,/usr/local/share/buzz/include/vec2.bzz
+801:	pushs 3	|81,12,/usr/local/share/buzz/include/vec2.bzz
+806:	tget	|81,14,/usr/local/share/buzz/include/vec2.bzz
+807:	lload 2	|81,18,/usr/local/share/buzz/include/vec2.bzz
+812:	pushs 3	|81,19,/usr/local/share/buzz/include/vec2.bzz
+817:	tget	|81,20,/usr/local/share/buzz/include/vec2.bzz
+818:	sub	|81,20,/usr/local/share/buzz/include/vec2.bzz
+819:	tput	|81,20,/usr/local/share/buzz/include/vec2.bzz
+820:	dup	|81,20,/usr/local/share/buzz/include/vec2.bzz
+821:	pushs 4	|82,5,/usr/local/share/buzz/include/vec2.bzz
+826:	lload 1	|82,11,/usr/local/share/buzz/include/vec2.bzz
+831:	pushs 4	|82,12,/usr/local/share/buzz/include/vec2.bzz
+836:	tget	|82,14,/usr/local/share/buzz/include/vec2.bzz
+837:	lload 2	|82,18,/usr/local/share/buzz/include/vec2.bzz
+842:	pushs 4	|82,19,/usr/local/share/buzz/include/vec2.bzz
+847:	tget	|82,20,/usr/local/share/buzz/include/vec2.bzz
+848:	sub	|82,20,/usr/local/share/buzz/include/vec2.bzz
+849:	tput	|82,20,/usr/local/share/buzz/include/vec2.bzz
+850:	ret1	|83,3,/usr/local/share/buzz/include/vec2.bzz
+851:	ret0	|84,1,/usr/local/share/buzz/include/vec2.bzz
+852:	pusht	|94,4,/usr/local/share/buzz/include/vec2.bzz
+853:	dup	|94,4,/usr/local/share/buzz/include/vec2.bzz
+854:	pushs 3	|94,5,/usr/local/share/buzz/include/vec2.bzz
+859:	lload 1	|94,10,/usr/local/share/buzz/include/vec2.bzz
+864:	pushs 3	|94,11,/usr/local/share/buzz/include/vec2.bzz
+869:	tget	|94,13,/usr/local/share/buzz/include/vec2.bzz
+870:	lload 2	|94,16,/usr/local/share/buzz/include/vec2.bzz
+875:	mul	|94,16,/usr/local/share/buzz/include/vec2.bzz
+876:	tput	|94,16,/usr/local/share/buzz/include/vec2.bzz
+877:	dup	|94,16,/usr/local/share/buzz/include/vec2.bzz
+878:	pushs 4	|95,5,/usr/local/share/buzz/include/vec2.bzz
+883:	lload 1	|95,10,/usr/local/share/buzz/include/vec2.bzz
+888:	pushs 4	|95,11,/usr/local/share/buzz/include/vec2.bzz
+893:	tget	|95,13,/usr/local/share/buzz/include/vec2.bzz
+894:	lload 2	|95,16,/usr/local/share/buzz/include/vec2.bzz
+899:	mul	|95,16,/usr/local/share/buzz/include/vec2.bzz
+900:	tput	|95,16,/usr/local/share/buzz/include/vec2.bzz
+901:	ret1	|96,3,/usr/local/share/buzz/include/vec2.bzz
+902:	ret0	|97,1,/usr/local/share/buzz/include/vec2.bzz
+903:	lload 1	|106,11,/usr/local/share/buzz/include/vec2.bzz
+908:	pushs 3	|106,12,/usr/local/share/buzz/include/vec2.bzz
+913:	tget	|106,14,/usr/local/share/buzz/include/vec2.bzz
+914:	lload 2	|106,18,/usr/local/share/buzz/include/vec2.bzz
+919:	pushs 3	|106,19,/usr/local/share/buzz/include/vec2.bzz
+924:	tget	|106,21,/usr/local/share/buzz/include/vec2.bzz
+925:	mul	|106,21,/usr/local/share/buzz/include/vec2.bzz
+926:	lload 1	|106,25,/usr/local/share/buzz/include/vec2.bzz
+931:	pushs 4	|106,26,/usr/local/share/buzz/include/vec2.bzz
+936:	tget	|106,28,/usr/local/share/buzz/include/vec2.bzz
+937:	lload 2	|106,32,/usr/local/share/buzz/include/vec2.bzz
+942:	pushs 4	|106,33,/usr/local/share/buzz/include/vec2.bzz
+947:	tget	|106,34,/usr/local/share/buzz/include/vec2.bzz
+948:	mul	|106,34,/usr/local/share/buzz/include/vec2.bzz
+949:	add	|106,34,/usr/local/share/buzz/include/vec2.bzz
+950:	ret1	|106,34,/usr/local/share/buzz/include/vec2.bzz
+951:	ret0	|107,1,/usr/local/share/buzz/include/vec2.bzz
+952:	ret0	|10,1,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+953:	pushs 19	|15,21,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+958:	pushs 11	|15,28,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+963:	gload	|15,28,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+964:	lload 1	|15,34,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+969:	pushs 3	|15,35,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+974:	tget	|15,37,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+975:	pushs 20	|15,43,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+980:	gload	|15,43,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+981:	pushs 21	|15,44,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+986:	tget	|15,52,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+987:	pushs 3	|15,53,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+992:	tget	|15,54,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+993:	sub	|15,54,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+994:	lload 1	|15,61,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+999:	pushs 4	|15,62,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1004:	tget	|15,64,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1005:	pushs 20	|15,70,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1010:	gload	|15,70,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1011:	pushs 21	|15,71,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1016:	tget	|15,79,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1017:	pushs 4	|15,80,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1022:	tget	|15,81,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1023:	sub	|15,81,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1024:	pushi 2	|15,82,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1029:	callc	|15,82,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1030:	gstore	|15,82,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1031:	pushs 22	|16,9,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1036:	gload	|16,9,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1037:	pushs 19	|16,25,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1042:	gload	|16,25,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1043:	pushi 1	|16,26,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1048:	callc	|16,26,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1049:	ret0	|17,1,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1050:	pushs 18	|22,23,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1055:	gload	|22,23,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1056:	pushi 0	|22,25,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1061:	callc	|22,25,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1062:	ret0	|23,1,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1063:	ret0	|34,1,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz
+1064:	ret0	|42,1,/Users/pincy/Fabrica/NEST/buzz-examples/goto/goto.bzz

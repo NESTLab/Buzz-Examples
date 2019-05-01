@@ -1,0 +1,6 @@
+function f(i) {
+  if(i == 0) {
+    log("ciao")
+  }
+  else {
+}

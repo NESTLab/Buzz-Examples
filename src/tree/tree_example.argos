@@ -25,7 +25,8 @@
       <sensors>
         <range_and_bearing implementation="medium" medium="rab" show_rays="false" noise_std_dev="0" />
       </sensors>
-      <params>
+      <params bytecode_file="build/tree/tree_example.bo"
+              debug_file="build/tree/tree_example.bdb">
         <wheel_turning hard_turn_angle_threshold="90"
                        soft_turn_angle_threshold="70"
                        no_turn_angle_threshold="10"

@@ -1,0 +1,15 @@
+function init() {
+}
+
+function step() {
+  a = { .0 = 1, .1 = 2 }
+  b = map(a, function(k,v) { return v + 10 })
+  foreach(a, function(k,v) { log("A: ", k, " -> ", v) })
+  foreach(b, function(k,v) { log("B: ", k, " -> ", v) })
+}
+
+function reset() {
+}
+
+function destroy() {
+}

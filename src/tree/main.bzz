@@ -3,7 +3,7 @@
 
 # Use Ctrl + Click (Cmd + Click on Mac) to move a selected robot to a different location
 
-include "tree.bzz"
+include "tree/tree.bzz"
 
 # Put your global variables here
 

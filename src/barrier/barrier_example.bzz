@@ -1,0 +1,53 @@
+include "barrier/barrier.bzz"
+
+function state(sid, r, g, b, bar) {
+  return function() {
+    if(c < mx) {
+      c = c + 1
+      debug.print(sid, ": ", c, "/", mx)
+      debug.set_color(r, g, b)
+      if(c >= mx)
+        barrier_ready(bar)
+    }
+    else {
+      barrier_wait(bar)
+      debug.print(sid, ": WAIT")
+    }
+  }
+}
+
+function transf(b) {
+  c = 0
+  barrier_reset(b, 20, ss2, ss1, transf)
+}
+
+function init() {
+  # Create swarm
+  ss1 = swarm.create(1)
+  ss2 = swarm.create(2)
+  # Join swarm 1
+  ss1.join()
+  # Create barrier
+  b = barrier_new(1, 20, ss1, ss2, transf)
+  # Create states
+  sf1 = state("s1", 255, 0, 0, b)
+  sf2 = state("s2", 0, 0, 255, b)
+  # Random max counter
+  math.rng.setseed(id)
+  mx = math.rng.uniform(100)
+  # Counter
+  c = 0
+}
+
+function step() {
+  ss1.exec(sf1)
+  ss2.exec(sf2)
+}
+
+
+function reset() {
+}
+
+
+function destroy() {
+}

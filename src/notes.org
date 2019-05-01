@@ -1,0 +1,73 @@
+#+TITLE: Example development notes
+
+* Data Propagation/Aggregation
+** Propagation
+There should be a primitive for data propagation that allows one to modify a piece of data as the information propagates. Something like ~propagate(topic, data, fun)~ where ~fun~ is a ~function(topic, depth, data)~. In Buzz this can be achieved using ~neighbors.broadcast()~ and ~neighbors.listen()~. The simplest form of propagation is to simply pass a certain message over. To prevent the messages to be constantly sent back and forth, the message also needs to have a ~depth~ attribute that allows one to know whether to propagate or not. In Buzz:
+#+BEGIN_SRC javascript
+  #
+  # Propagates a message across the robot network.
+  # PARAM swarmid: The id of the swarm involved in the propagation.
+  # PARAM topic:   The propagated topic
+  # PARAM data:    The propagated topic
+  # PARAM fun:     The function to apply to the data as it is propagated
+  #
+  function propagate(swarmid, topic, data, fun) {
+      var s = swarm.create(swarmid)
+      if(startpred) {
+          neighbors.broadcast(topic, {.data=data, .depth=0})
+      }
+      else {
+      }
+  }
+#+END_SRC
+** Aggregation
+In the same vein, aggregation should be possible, i.e., the possibility to select a node as sink and concentrate the information there. The sink is naturally the ~0-depth~ message initiator.
+* In-Network Function Computation
+Another idea is to have a function, expressed as a parsed tree, computed by a set of robots in random order. It differs from aggregation in that, in aggregation, information is concentrated in one spot, and the final calculation is made by a single robot. With in-network computation, any robot can take part in the computation, and only the result is presented at the sink.
+How to make this a native feature of Buzz? We can use virtual stigmergy to share results, and the function to calculate could be simple mathematical functions. The trick should be that every robot should provide a number of operators to make the computation proceed. Then, the computation is expressed as a tree in the virtual stigmergy. As the computation proceeds, parts of the tree are collapsed and substituted by their result --- this way, robots can save memory.
+** Generalizing In-Network Computation
+It's easy to think that in-network computation is a very general form of computation, in that it allows for expressing very general concepts in a very concise way. A possible generalization of simple mathematical functions could be planning in task allocation.
+** Blockchain and In-Network Computation
+It is possible to imagine a competitive model for in-network computation, in which many robots engage in computing a specific result. In the blockchain, the winner would get to add its result to the blockchain, and get a reward in exchange. I don't see a role for reward in Buzz just yet, but a concept of "blockchain" could be useful to allow for in-network computation. The blockchain differs from virtual stigmergy in that the blockchain has a layer of security --- the result of the computation must match the cryptographic constraints --- and the blockchain also keeps the result history, while virtual stigmergy does not necessarily do so (and in most cases it doesn't).
+* Shader-Like Programming
+Shaders are mini-programs that are submitted to a GPU to execute in a massively parallel fashion. The interesting part about shader programming is the concept of /pipeline/ that allows you to intervene at different levels of abstraction. This concept should be mapped to Buzz. Buzz has a nice abstraction level, because it allows you to reason on the individual robot as well as on group of robots. To fully achieve the vision, we should have 
+* VStig bug
+- L = local tuple
+- R = remote tuple
+- k = key
+- v = value
+- t = time stamp or 0 if none
+- i = robot id
+
+| *Situation*  | *Remote*   | *Local*    | *Other*            | *Storage*                  | *Communication*         |        *Size* |
+|------------+----------+----------+------------------+--------------------------+-----------------------+-------------|
+| put(k,v)   | v!=nil   | L=nil    |                  | store({k,v,1,i})         | (put,{k,v,1,i})       |          +1 |
+| put(k,v)   | v!=nil   | L!=nil   |                  | store({k,v,L.t+1,i})     | (put,{k,v,L.t+1,i})   |          +1 |
+| put(k,v)   | v=nil    | L!=nil   |                  |                          | (put,{k,nil,L.t+1,i}) |          -1 |
+| put(k,v)   | v=nil    | L=nil    |                  |                          |                       |             |
+|------------+----------+----------+------------------+--------------------------+-----------------------+-------------|
+| L.v=get(k) |          | L.v!=nil |                  | L=retr(k)                | (get,L)               |             |
+| L.v=get(k) |          | L.v=nil  |                  | L=retr(k)                | (get,{k,nil,0,i})     |             |
+|------------+----------+----------+------------------+--------------------------+-----------------------+-------------|
+| msg(get,R) | R.v!=nil | L.v!=nil | R.t>L.t          | store(R)                 | (put,R)               |          +1 |
+| msg(get,R) | R.v!=nil | L.v=nil  | R.t>L.t          | store(R)                 | (put,R)               |          +1 |
+| msg(get,R) | R.v=nil  | L.v!=nil | R.t>L.t          |                          | (put,R)               |          -1 |
+| msg(get,R) | R.v=nil  | L.v=nil  | R.t>L.t          |                          | (put,R)               |             |
+| msg(get,R) | R.v!=nil | L.v!=nil | R.t<L.t          |                          | (put,L)               |             |
+| msg(get,R) | R.v!=nil | L.v=nil  | R.t<L.t          |                          | (put,L)               |             |
+| msg(get,R) | R.v=nil  | L.v!=nil | R.t<L.t          |                          | (put,L)               |             |
+| msg(get,R) | R.v=nil  | L.v=nil  | R.t<L.t          |                          | (put,L)               |             |
+| msg(get,R) | R.v!=nil | L.v!=nil | R.t=L.t,R.i!=L.i | T=conflict(L,R);store(T) | (put,T)               | T!=nil?+1:0 |
+| msg(get,R) | R.v!=nil | L.v=nil  | R.t=L.t,R.i!=L.i | T=conflict(L,R);store(T) | (put,T)               | T!=nil?+1:0 |
+| msg(get,R) | R.v=nil  | L.v!=nil | R.t=L.t,R.i!=L.i | T=conflict(L,R);store(T) | (put,T)               | T!=nil?+1:0 |
+| msg(get,R) | R.v=nil  | L.v=nil  | R.t=L.t,R.i>L.i  |                          | (put,R)               |             |
+| msg(get,R) | R.v=nil  | L.v=nil  | R.t=L.t,R.i<L.i  |                          | (put,L)               |             |
+| msg(get,R) | R.v!=nil | L.v=nil  | R.t=L.t,R.i=L.i  | [BUG]                    |                       |             |
+| msg(get,R) | R.v=nil  | L.v!=nil | R.t=L.t,R.i=L.i  | [BUG]                    |                       |             |
+| msg(get,R) | R.v!=nil | L.v!=nil | R.t=L.t,R.i=L.i  |                          |                       |             |
+| msg(get,R) | R.v=nil  | L.v=nil  | R.t=L.t,R.i=L.i  |                          |                       |             |
+|------------+----------+----------+------------------+--------------------------+-----------------------+-------------|
+| msg(put,R) | R.v!=nil | L.v!=nil | R.t>L.t          | store(R)                 | (put,R)               |             |
+| msg(put,R) | R.v!=nil | L.v=nil  | R.t>L.t          | store(R)                 | (put,R)               |          +1 |
+| msg(put,R) | R.v!=nil | L.v!=nil | R.t<L.t          |                          | (put,L)               |             |
+| msg(put,R) | R.v!=nil | L.v=nil  | R.t>L.t          | store(R)                 | (put,R)               |          +1 |
