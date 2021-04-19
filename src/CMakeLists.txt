@@ -1,7 +1,8 @@
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.8.0)
 project(buzz-examples)
 
 find_package(Buzz REQUIRED)
+set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${Buzz_DIR}")
 #include_directories(${BUZZ_C_INCLUDE_DIR})
 #target_link_libraries(... ${BUZZ_LIBRARY})
 include(UseBuzz)
